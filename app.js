@@ -3,10 +3,10 @@ let game_bx_1_left_btn = document.getElementById('game_bx_1_left_btn');
 let game_bx_1_right_btn = document.getElementById('game_bx_1_right_btn');
 
 game_bx_1_left_btn.addEventListener('click', ()=>{
-    game_bx_1.scrollLeft -= 250;
+    game_bx_1.scrollLeft -= 1000;
 });
 game_bx_1_right_btn.addEventListener('click', ()=>{
-    game_bx_1.scrollLeft += 250;
+    game_bx_1.scrollLeft += 1000;
 });
 
 let day_night = document.getElementById('day_night');
@@ -68,5 +68,15 @@ navigator.getBattery().then(battery => {
     })
 });
 
+let wifi = document.getElementById('wifi');
+const wifi_change = () =>{
+    if (navigator.onLine) {
+        wifi.style.color = "var(--color-5)";
+    } else {
+        wifi.style.color = "";
+    }
+}
+setInterval(wifi_change, 100);
+wifi_change();
 
 
